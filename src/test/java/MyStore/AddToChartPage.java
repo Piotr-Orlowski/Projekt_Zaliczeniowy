@@ -35,6 +35,13 @@ public class AddToChartPage {
         increaseItem.click();
         increaseItem.click();
         driver.findElement(By.className("add-to-cart")).click();
+        driver.get("https://prod-kurs.coderslab.pl/index.php?controller=cart&action=show");
+        driver.get("https://prod-kurs.coderslab.pl/index.php?controller=order");
+        driver.findElement(By.name("confirm-addresses")).click();
+        driver.findElement(By.name("confirmDeliveryOption")).click();
+        driver.findElement(By.id("payment-option-1")).click();
+        driver.findElement(By.id("conditions_to_approve[terms-and-conditions]")).click();
+        driver.findElement(By.id("payment-confirmation")).click();
 
     }
 }
