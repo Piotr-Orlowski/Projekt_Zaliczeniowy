@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class AddToChartPage {
     public static void main(String[] args) {
@@ -25,10 +26,15 @@ public class AddToChartPage {
         searchInput.clear();
         searchInput.sendKeys("Hummingbird Printed Sweater");
         searchInput.submit();
-        driver.get("https://mystore-testlab.coderslab.pl/index.php?id_product=2&id_product_attribute=9&rewrite=brown-bear-printed-sweater&controller=product#/1-size-s");
-        WebElement sizeComboBox = driver.findElement(By.id("group_1"));
-        sizeComboBox.clear();
-        sizeComboBox.sendKeys("M");
-        sizeComboBox.submit();
+//        driver.get("https://mystore-testlab.coderslab.pl/index.php?id_product=2&id_product_attribute=9&rewrite=brown-bear-printed-sweater&controller=product#/1-size-s");
+        driver.get("https://mystore-testlab.coderslab.pl/index.php?id_product=2&id_product_attribute=10&rewrite=brown-bear-printed-sweater&controller=product#/2-size-m");
+        WebElement quantity = driver.findElement(By.id("quantity_wanted"));
+        WebElement increaseItem = driver.findElement(By.className("bootstrap-touchspin-up"));
+        increaseItem.click();
+        increaseItem.click();
+        increaseItem.click();
+        increaseItem.click();
+        driver.findElement(By.className("add-to-cart")).click();
+
     }
 }
