@@ -1,10 +1,8 @@
 package MyStore;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
+
 
 public class AddToChartPage {
     public static void main(String[] args) {
@@ -41,7 +39,7 @@ public class AddToChartPage {
         driver.findElement(By.name("confirmDeliveryOption")).click();
         driver.findElement(By.id("payment-option-1")).click();
         driver.findElement(By.id("conditions_to_approve[terms-and-conditions]")).click();
-        driver.findElement(By.id("payment-confirmation")).click();
+        driver.findElement(By.xpath("/html/body/main/section/div/div/section/div/div[1]/section[4]/div/div[3]/div[1]/button")).click();
 
-    }
+        }
 }
